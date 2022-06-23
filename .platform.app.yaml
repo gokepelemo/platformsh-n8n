@@ -1,0 +1,71 @@
+name: main
+type: nodejs:16
+disk: 1024
+
+relationships:
+  database: "db:postgresql"
+  queue: "queue:redis"
+
+dependencies:
+  nodejs:
+    "npm": "*"
+
+hooks:
+  build: |
+    set -e
+    npm install n8n -g
+
+  deploy: |
+    set -e
+      if [ ! -f files/index.html ]; then
+          # Create an index.html file in the files directory
+          touch files/index.html
+          echo "n8n - The workflow automation platform that doesn't box you in, that you never outgrow" >> files/index.html
+      fi;
+
+web:
+
+  # A public web location for static files generated from n8n
+  locations: 
+    "/files":
+      root: "files"
+      allow: true
+      scripts: false
+      index: ["index.html"]
+      rules:
+        "\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$":
+          allow: true
+          expires: 30m
+  
+  # An n8n process for all other requests
+  commands:
+    start: |
+      n8n start
+
+workers:
+  queue:
+    size: S
+    commands:
+      start: |
+        n8n worker
+
+mounts:
+
+  # A working directory for n8n
+  "/.n8n":
+    source: local
+    source_path: "n8n" 
+
+  # A writable directory to cache temporary files in n8n
+  "/.cache":
+    source: local
+    source_path: "cache"
+
+  # A writable directory to store files that should be publicly available after workflows   
+  "/files":
+    source: local
+    source_path: "files"
+
+variables:
+  env:
+    "NODE_OPTIONS": "--max-old-space-size=512"

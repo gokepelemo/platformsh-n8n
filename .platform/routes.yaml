@@ -1,0 +1,24 @@
+"https://{default}":
+  type: upstream
+  upstream: "main:http"
+  id: "main"
+  cache:
+    enabled: false
+
+"https://hook.{default}":
+  type: redirect
+  to: "https://{default}"
+  id: "webhook"
+  cache:
+    enabled: false
+
+"https://{default}/files"
+  type: upstream
+  upstream: "main:http"
+  cache:
+    enabled: true
+    default_ttl: 30m
+
+"https://www.{default}":
+  type: redirect
+  to: "https://{default}"
