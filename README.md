@@ -5,7 +5,7 @@ This repository contains a working configuration of n8n that can be deployed on 
 It is configured with:
 - A persistent redis service to run your queues
 - A worker container to free up the main process while workflows are executing
-- A publicly available `/files` path to serve n8n processed files publicly e.g. output > `/files/{filename}.pdf`
+- A publicly available `/files` path to serve n8n processed files publicly e.g. output > `files/{filename}.pdf` on n8n
 - A cache directory `.cache` to store files that are still being used in your workflows, or that are shared between workflows
 
 ## Security
@@ -19,4 +19,4 @@ the [Platform.sh CLI](https://docs.platform.sh/gettingstarted/introduction/own-c
 - The /metrics endpoint is disabled by default, but it's possible to enable it using the N8N_METRICS environment variable on 
 `.environment` before deploying.
 
-Read all about [Platform.sh](https://docs.platform.sh/), and [n8n](https://docs.n8n.io/).
+Read all about [Platform.sh](https://docs.platform.sh/) and [n8n](https://docs.n8n.io/).
