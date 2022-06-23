@@ -3,7 +3,7 @@ export N8N_PORT=8888
 export N8N_ONBOARDING_FLOW_DISABLED=false
 export N8N_WORKFLOW_TAGS_DISABLED=false
 export WEBHOOK_URL=`echo $PLATFORM_ROUTES | base64 --decode | jq -r 'limit(1;.[] | select(.primary) | .production_url)'`
-export N8N_METRICS=true
+export N8N_METRICS=false
 export DATA_FOLDER=$PLATFORM_APP_DIR/.n8n/
 
 # Security configuration - see README for more details
@@ -12,7 +12,7 @@ export N8N_BASIC_AUTH_USER=n8n
 export N8N_BASIC_AUTH_PASSWORD=n8n
 
 # Encryption key - see README for more details
-export N8N_ENCRYPTION_KEY=
+# export N8N_ENCRYPTION_KEY=
 
 # Database configuration
 export DB_TYPE=postgresdb
@@ -42,4 +42,4 @@ export N8N_SMTP_HOST=$PLATFORM_SMTP_HOST
 export N8N_SMTP_PORT=25
 #export N8N_SMTP_USER=
 #export N8N_SMTP_PASS=
-#export N8N_SMTP_SENDER=goke.pelemo@gmail.com
+#export N8N_SMTP_SENDER=
