@@ -8,17 +8,13 @@ configured with:
 - A cache directory `.cache` to store files that are still being used in your workflows, or that are shared between workflows
 
 ## Installation
-An encryption key is needed on the project to store integration credentials safely between environments. You can create one with 
-the [Platform.sh 
-CLI](https://docs.platform.sh/gettingstarted/introduction/own-code/cli-install.html) 
-with this command before your first deploy:
+An encryption key is needed on the project to store integration credentials safely between environments. You can create one with the [Platform.sh CLI](https://docs.platform.sh/gettingstarted/introduction/own-code/cli-install.html) and this command before your first deploy:
 
 `platform variable:create -y --level project --sensitive true --name env:N8N_ENCRYPTION_KEY --value $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 30) --visible-build true --visible-runtime true`
 
 ### .environment
-- By default, HTTP Basic Auth is enabled and configured as n8n:n8n. You can modify that on `.environment` before deploying.
-- The /metrics endpoint is disabled by default, but it's possible to enable it using the N8N_METRICS environment variable on 
-`.environment` before deploying.
+- By default, HTTP basic auth is enabled and configured as n8n:n8n. You can modify that on `.environment` before deploying.
+- The /metrics endpoint is disabled by default, but it's possible to enable it using the N8N_METRICS environment variable on `.environment` before deploying.
 
 Read all about [Platform.sh](https://docs.platform.sh/) and [n8n](https://docs.n8n.io/).
 
