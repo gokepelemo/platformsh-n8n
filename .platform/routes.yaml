@@ -17,7 +17,6 @@
   upstream: "main:http"
   cache:
     enabled: true
-    default_ttl: 30m
 
 "https://www.{default}":
   type: redirect
