@@ -19,3 +19,5 @@ the [Platform.sh CLI](https://docs.platform.sh/gettingstarted/introduction/own-c
 `.environment` before deploying.
 
 Read all about [Platform.sh](https://docs.platform.sh/) and [n8n](https://docs.n8n.io/).
+
+n8n v0.183
