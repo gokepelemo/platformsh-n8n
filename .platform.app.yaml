@@ -69,3 +69,9 @@ mounts:
 variables:
   env:
     "NODE_OPTIONS": "--max-old-space-size=512"
+
+source:
+  operations:
+    auto-update:
+      command: |
+        curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
