@@ -9,7 +9,9 @@ configured with:
 
 ## Installation
 An encryption key is needed on the project to store integration credentials safely between environments. You can create one with 
-the [Platform.sh CLI](https://docs.platform.sh/gettingstarted/introduction/own-code/cli-install.html) by running:
+the [Platform.sh 
+CLI](https://docs.platform.sh/gettingstarted/introduction/own-code/cli-install.html) 
+with this command before your first deploy:
 
 `platform variable:create -y --level project --sensitive true --name env:N8N_ENCRYPTION_KEY --value $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 30) --visible-build true --visible-runtime true`
 
