@@ -21,12 +21,12 @@ You can update n8n locally with the npm command `npm update -g n8n`, committing 
 `platform source-operation:run update-n8n`
 
 ### Install a specific n8n version
-You can install a specific version of n8n using Source Operations with this Platform.sh CLI command:
+You can install a specific version of n8n using our Source Operations feature with this Platform.sh CLI command:
 
 `platform source-operation:run install-n8n-version --variable env:N8N_VERSION={n8n version}`
 
 ### Revert to the last commit
-You can revert to the last commit if your node install or update is not successful with this Platform.sh CLI command:
+You can revert to the last commit if your node install or update is not successful using our Source Operations feature with this Platform.sh CLI command:
 
 `platform source-operation:run revert-commit`
 
