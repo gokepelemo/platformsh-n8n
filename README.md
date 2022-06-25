@@ -1,7 +1,6 @@
 # n8n workflow automation
 
-This repository contains a working configuration of n8n that can be deployed on Platform.sh and used for workflow automations. It is 
-configured with:
+This repository contains a working configuration of n8n that can be deployed on Platform.sh and used for workflow automation. It is configured with:
 - A persistent redis service to run your queues
 - A worker container to free up the main process while workflows are executing
 - A publicly available `/files` path to serve n8n processed files publicly e.g. output > `files/{filename}.pdf` on n8n
@@ -22,7 +21,7 @@ You can update n8n locally with the npm command `npm update -g n8n`, committing 
 `platform source-operation:run update-n8n`
 
 ### Install a specific n8n version
-You can install a specific version of n8n using Source Operations with this command:
+You can install a specific version of n8n using Source Operations with this Platform.sh CLI command:
 
 `platform source-operation:run install-n8n-version --variable env:N8N_VERSION={n8n version}`
 
