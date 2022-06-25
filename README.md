@@ -14,8 +14,23 @@ An encryption key is needed on the project to store integration credentials safe
 
 ### .environment
 - By default, HTTP basic auth is enabled and configured as n8n:n8n. You can modify that on `.environment` before deploying.
-- The /metrics endpoint is disabled by default, but it's possible to enable it using the N8N_METRICS environment variable on `.environment` before deploying.
+- The /metrics endpoint is disabled by default, but it's possible to enable it using the `N8N_METRICS` environment variable on `.environment` before deploying.
 
-Read all about [Platform.sh](https://docs.platform.sh/) and [n8n](https://docs.n8n.io/).
+### Updates
+You can update n8n locally with the npm command `npm update -g n8n`, committing the changes, and pushing to Platform.sh. You can update in place using our Source Operations feature with this Platform.sh CLI command:
 
-[n8n v0.183](https://github.com/n8n-io/n8n)
+`platform source-operation:run update-n8n`
+
+### Install a specific n8n version
+You can install a specific version of n8n using Source Operations with this command:
+
+`platform source-operation:run install-n8n-version --variable env:N8N_VERSION={n8n version}`
+
+### Revert to the last commit
+You can revert to the last commit if your node install or update is not successful with this Platform.sh CLI command:
+
+`platform source-operation:run revert-commit`
+
+Documentation: [Platform.sh](https://docs.platform.sh/) | [n8n](https://docs.n8n.io/)
+
+Github: [Platform.sh](https://github.com/platformsh/) | [n8n](https://github.com/n8n-io/)
