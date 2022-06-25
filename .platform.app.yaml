@@ -32,7 +32,7 @@ web:
       scripts: false
       index: ["index.html"]
       rules:
-        "\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$":
+        '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
           allow: true
           expires: 30m  
   # An n8n process for all other requests
