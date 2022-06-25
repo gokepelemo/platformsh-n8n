@@ -82,3 +82,16 @@ source:
     auto-update:
       command: |
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
+    update-n8n:
+      command: !include
+        type: string
+        path: ops/source/update-n8n.sh
+    install-n8n-version:
+      command: !include
+        type: string
+        path: ops/source/install-n8n-version.sh
+    revert-commit:
+      command: !include
+        type: string
+        path: ops/source/revert-commit.sh
+

@@ -12,7 +12,7 @@
   cache:
     enabled: false
 
-"https://{default}/files"
+"https://{default}/files":
   type: upstream
   upstream: "main:http"
   cache:
