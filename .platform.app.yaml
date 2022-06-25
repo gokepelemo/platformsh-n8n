@@ -11,9 +11,15 @@ dependencies:
     "npm": "*"
 
 hooks:
-  build: |
-    set -e
-    npm install n8n -g
+  build: !include
+    type: string
+    path: ops/hooks/build.sh
+  deploy: !include
+    type: string
+    path: ops/hooks/deploy.sh
+  post_deploy: !include
+    type: string
+    path: ops/hooks/post_deploy.sh
 
   deploy: |
     set -e
@@ -39,8 +45,9 @@ web:
   
   # An n8n process for all other requests
   commands:
-    start: |
-      n8n start
+    start: !include
+      type: string
+      path: ops/start.sh
 
 workers:
   queue:
