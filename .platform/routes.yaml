@@ -6,8 +6,8 @@
     enabled: false
 
 "https://hook.{default}":
-  type: redirect
-  to: "https://{default}"
+  type: upstream
+  upstream: "main:http"
   id: "webhook"
   cache:
     enabled: false
@@ -21,3 +21,4 @@
 "https://www.{default}":
   type: redirect
   to: "https://{default}"
+
