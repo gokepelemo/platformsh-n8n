@@ -5,13 +5,6 @@
   cache:
     enabled: false
 
-"https://hook.{default}":
-  type: upstream
-  upstream: "main:http"
-  id: "webhook"
-  cache:
-    enabled: false
-
 "https://{default}/files":
   type: upstream
   upstream: "main:http"
